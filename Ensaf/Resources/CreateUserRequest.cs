@@ -16,7 +16,7 @@ namespace Ensaf.Resources
 
         public string Name { get; set; }
         
-        public RegisterUserTypes UserType { get; set; }
+        public RegisterUserType UserType { get; set; }
 
 
         public IEnumerable<string> Roles { get; set; }

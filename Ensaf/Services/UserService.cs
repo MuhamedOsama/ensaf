@@ -10,6 +10,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -111,11 +112,11 @@ namespace Ensaf.Services
             // map model to new user object
             var user = _mapper.Map<User>(model);
             Role role = null;
-            if(model.UserType == RegisterUserTypes.NormalUser)
+            if(model.UserType == RegisterUserType.NormalUser)
             {
                 role = _context.Roles.FirstOrDefault(r => r.Name == nameof(Roles.Normal));
 
-            }else if (model.UserType == RegisterUserTypes.Commissioner)
+            }else if (model.UserType == RegisterUserType.Commissioner)
             {
                 role = _context.Roles.FirstOrDefault(r => r.Name == nameof(Roles.Commissioner));
             }
@@ -283,14 +284,13 @@ namespace Ensaf.Services
             if (!refreshToken.IsActive) throw new AppException("Invalid token");
             return (refreshToken, user);
         }
-
         private string generateJwtToken(User user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
+                Subject = new ClaimsIdentity(claims: new[] { new System.Security.Claims.Claim("id", user.Id.ToString()) }),
                 Expires = DateTime.UtcNow.AddMinutes(900),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };

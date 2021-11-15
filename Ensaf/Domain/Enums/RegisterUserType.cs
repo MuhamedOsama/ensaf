@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace Ensaf.Domain.Enums
 {
-    public enum IdentificationTypes
+    public enum RegisterUserType
     {
-        KsA = 1,
-        Iqama = 2,
-        Passport = 3
+        NormalUser = 1,
+        Commissioner = 2
     }
 }

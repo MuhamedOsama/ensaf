@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace Ensaf.Domain.Enums
 {
-    public enum RegisterUserTypes
+    public enum WarrantiesType
     {
-        NormalUser = 1,
-        Commissioner = 2
+        Car,
+        RealEstate,
+        Other
     }
 }

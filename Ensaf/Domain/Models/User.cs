@@ -11,7 +11,7 @@ namespace Ensaf.Domain.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public IdentificationTypes IdType { get; set; }
+        public IdentificationType IdType { get; set; }
 
 #nullable enable
         public string? IdNumber { get; set; }

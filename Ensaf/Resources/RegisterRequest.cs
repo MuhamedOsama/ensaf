@@ -10,14 +10,14 @@ namespace Ensaf.Resources
     public class RegisterRequest
     {
         public string Name { get; set; }
-        public IdentificationTypes IdType { get; set; }
+        public IdentificationType IdType { get; set; }
         public string PassportNumber { get; set; }
         public string LicenseNumber { get; set; }
         public string OfficeName { get; set; }
         public string OfficeAddress { get; set; }
         public bool AcceptTerms { get; set; }
 
-        public RegisterUserTypes UserType { get; set; }
+        public RegisterUserType UserType { get; set; }
 
         public string IdNumber { get; set; }
 
