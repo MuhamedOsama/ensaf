@@ -30,6 +30,12 @@ namespace Ensaf.Domain.Models
         public string AdjectiveDocument { get; set; }
         public DateTime ApplicationDate { get; set; }
         public bool AcceptDeclarationForm { get; set; }
+        public CreditorData CreditorData { get; set; }
+        public DebitData DebitData { get; set; }
+        public BankInformation BankInformation { get; set; }
+        public AdditionalInformation AdditionalInformation { get; set; }
+        public ClaimAttachedFiles ClaimAttachedFiles { get; set; }
+        public Project Project { get; set; }
 
 
     }

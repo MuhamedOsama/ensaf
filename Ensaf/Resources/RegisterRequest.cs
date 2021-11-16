@@ -1,9 +1,4 @@
 ﻿using Ensaf.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Ensaf.Resources
 {
@@ -13,6 +8,8 @@ namespace Ensaf.Resources
         public IdentificationType IdType { get; set; }
         public string PassportNumber { get; set; }
         public string LicenseNumber { get; set; }
+        public string PhoneNumber { get; set; }
+
         public string OfficeName { get; set; }
         public string OfficeAddress { get; set; }
         public bool AcceptTerms { get; set; }

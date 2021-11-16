@@ -1,4 +1,5 @@
 ﻿using Ensaf.Domain.Enums;
+using Ensaf.Extensions;
 using Ensaf.Resources;
 using FluentValidation;
 using System;
@@ -23,6 +24,9 @@ namespace Ensaf.Validators
             RuleFor(x => x.OfficeAddress).NotEmpty().When(u => (int)u.UserType == (int)RegisterUserType.Commissioner);
             RuleFor(x => x.OfficeName).NotEmpty().When(u => (int)u.UserType == (int)RegisterUserType.Commissioner);
             RuleFor(x => x.AcceptTerms).NotEmpty().Equal(true).WithMessage("Terms Must Be Accepted.");
+            RuleFor(x => x.Password).Password();
+            RuleFor(x => x.PhoneNumber).NotEmpty().IsPhoneNumber();
+            RuleFor (x => x.ConfirmPassword).Equal(x => x.Password);
         }
     }
 }

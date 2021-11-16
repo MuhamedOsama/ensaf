@@ -15,8 +15,8 @@ namespace Ensaf.Validators
             RuleFor(x => x.Email).NotEmpty().EmailAddress();
             RuleFor(x => x.Name).NotEmpty();
             RuleFor(x => x.Roles).NotEmpty();
-
-
+            RuleFor(x => x.Password).NotEmpty();
+            RuleFor(x => x.PhoneNumber).NotEmpty();
         }
     }
 }

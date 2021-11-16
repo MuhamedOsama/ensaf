@@ -22,6 +22,7 @@ namespace Ensaf.Domain.Models
         public string? OfficeAddress { get; set; }
 #nullable disable
         public string Email { get; set; }
+        public string PhoneNumber { get; set; }
         public string PasswordHash { get; set; }
         public bool AcceptTerms { get; set; }
         public ICollection<UserRole> UserRoles { get; set; } = new Collection<UserRole>();
